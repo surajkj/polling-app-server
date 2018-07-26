@@ -15,6 +15,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.NaturalId;
@@ -50,6 +51,7 @@ public class User extends DateAudit {
 	@NaturalId
     @NotBlank
     @Size(max = 40)
+	@Pattern(regexp = "[^@ ]+@[^@ ]+\\.[^@ ]+")
     @Email
 	private String email;
 	
